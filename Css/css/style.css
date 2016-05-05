@@ -1,0 +1,55 @@
+.open > .dropdown-toggle.btn-default {
+  color: #ffffff;
+  background-color: #798d8f;
+  border-color: #74898a;
+  
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+background-color:#4c5181;
+
+}
+.nav > li > a:hover, .nav > li > a:focus{
+background-color:#33396b;
+
+}
+
+.bootstrap-datetimepicker-widget{
+	background-color:#fff !important;
+	z-index:1151;
+	border:1px solid #888888;
+	box-shadow:5px 5px 4px #888888;
+	border-radius:0px 0px 0px 0px;
+}
+
+.customSelectRS>.dropdown-toggle{
+	background-color:#fff !important;
+	color:#000;
+	border:2px solid #dce4ec;
+}
+
+.customSelectRS>.dropdown-toggle:focus{
+	background-color:#fff !important;
+	color:#000;
+	border:2px solid #000;
+}
+
+.customSelectRS>.dropdown-menu{
+	background-color:#fff !important;
+	z-index:1151;
+	border:1px solid #888888;
+	box-shadow:5px 5px 4px #888888;
+	border-radius:0px 0px 0px 0px;
+}
+
+.modal{
+	overflow-y:auto;
+}
+
+.well-sm {
+  padding: 9px;
+  border-radius: 3px;
+  background-color:#19b8be;
+  border-color: #0f6e71;
+  color:#fff;
+}
+
