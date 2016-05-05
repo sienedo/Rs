@@ -53,3 +53,12 @@ background-color:#33396b;
   color:#fff;
 }
 
+.fixed-table-pagination .dropup .dropdown-menu {
+    margin-bottom: 0;
+	background-color:#fff !important;
+	z-index:1151;
+	border:1px solid #888888;
+	box-shadow:5px 5px 4px #888888;
+	border-radius:0px 0px 0px 0px;
+}
+
