@@ -49,9 +49,11 @@
 			format: 'L'
 		});
 		
+		
 		$('.selectpicker').selectpicker();
 		
 		$('#table2clinic').bootstrapTable();
+		$("#headline1").hide();
 
 	//	$('#table1').bootstrapTable();
 		
@@ -189,35 +191,79 @@
 				</div>
 			</div>
 			<!-- /Modal Find Data -->
-			
+			<!-- Modal View Data -->
+			<div class="modal fade" id="viewdata" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:#000;">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">View Detail</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-4 col-md-offset-2">
+									<label class="label-control">Date</label>
+								</div>
+								<div class="col-md-5">
+									<input type="text" value="" class="form-control" id="datedate"/>
+								</div>
+							</div>
+							<div class="row">
+								<br/>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-md-offset-2">
+									<label class="label-control">Diagnose</label>
+								</div>
+								<div class="col-md-5">
+									<textarea id="textarea2" class="form-control" style="resize:none;"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-8">
+									<table>
+										<thead>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Modal View Data -->
             <div style="padding:0px;" class="container-fluid">
                 <div style="padding:0px;" class="row">
+					
+				</div>
+				<div class="row" style="padding:0px;">
+					<div id="headline1" class="col-md-9 col-md-offset-1">
+						<label id="titles1" class="h3">PA001002 - Mr simanjuntak</label>
+					</div>
 					<div class="col-md-2 col-md-offset-9" >
 						<button id="token" type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#finddata"  aria-label="Right Align">
 							Find Data
 						</button>
 					</div>
-				</div>
-				<div class="row" style="padding:0px;">
 					<div style="padding:0px;" class="col-md-10 col-md-offset-1">
 						<table id="table2clinic" class="table table-striped" data-pagination="true">
 							<thead id="headtable">
-								<th class="text-center" width="20%">Patient Code</th>
+								<th class="text-center" width="20%">No</th>
 								<th class="text-center" width="20%">Date</th>
 								<th class="text-center" width="20%">Diagnose</th>
 								<th class="text-center" width="20%">Action</th>
 							</thead>
 							<tr>
-								<td class="text-center">P001002</td>
+								<td class="text-center">1</td>
 								<td class="text-center">12/05/2016</td>
 								<td class="text-center">penyakit kulit</td>
-								<td class="text-center">memberikan obat salep</td>
+								<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
 							</tr>
 							<tr>
-								<td class="text-center">P001002</td>
+								<td class="text-center">2</td>
 								<td class="text-center">12/05/2016</td>
 								<td class="text-center">penyakit kulit</td>
-								<td class="text-center">memberikan obat salep</td>
+								<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
 							</tr>
 						</table>
 					</div>
