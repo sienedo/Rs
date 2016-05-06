@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rumah Sakit Cinta System</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../Css/css/bootstrap.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-select.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-table.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../../Css/css/simple-sidebar.css" rel="stylesheet"/>
+	<link href="../../Css/css/style.css" rel="stylesheet"/>
+	<link href="../../Css/css/klinikcss.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- jQuery -->
+    <script src="../../Script/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../Script/bootstrap.min.js"></script>
+	<script src="../../Script/bootstrap-select.js"></script>
+	<script src="../../Script/moment.min.js"></script>
+    <script src="../../Script/moment-with-locales.js"></script>
+	<script src="../../Script/bootstrap-datetimepicker.js"></script>
+	<script src="../../Script/bootstrap-table.js"></script>
+	
+	<script type="text/javascript">
+	$(function(){
+	
+		$('#datetimepicker5').datetimepicker({
+			format: 'L'
+		});
+		$('.datetimepicker5').datetimepicker({
+			format: 'L'
+		});
+		
+		$('.selectpicker').selectpicker();
+		
+		$('#Next').click(function(){
+			$('#new-patient').modal('hide');
+			$('#new-patient2').modal('show');
+		});
+		
+		$('#Back').click(function(){
+			$('#new-patient2').modal('hide');
+			$('#new-patient').modal('show');
+		});
+		
+		$('#table1').bootstrapTable();
+		
+	});
+	$(document).keydown(function(event) {
+if (event.ctrlKey==true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109'  || event.which == '187'  || event.which == '189'  ) ) {
+        event.preventDefault();
+     }
+    // 107 Num Key  +
+    // 109 Num Key  -
+    // 173 Min Key  hyphen/underscor Hey
+    // 61 Plus key  +/= key
+});
+
+$(window).bind('mousewheel DOMMouseScroll', function (event) {
+       if (event.ctrlKey == true) {
+       event.preventDefault();
+       }
+});
+	</script>
+	
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-top:15%;">
+				
+				<!-- Put Profile Image Here -->
+				<img src="#" onerror="this.src='../../Images/none.png'" width="150" height="150" style="border-radius:100%;margin-left:20%;"/>
+			
+                <div class="col-lg-12 col-md-12" style="margin-top:5%" align="center">
+                    <span href="#" class="h4" style="color:#fff !important;align:center;">
+                        Doctor 01
+                    </span>
+                </div>
+				
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-change-password" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;margin-top:15%;">
+					  Change Password
+					</button>
+                </div>
+				<br/>
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-logout" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;">
+					  Log Out
+					</button>
+                </div>
+				<hr style="margin-top:80%;margin-left:-88%;color:black;" width="80%">
+                
+				<!-- Staff Menu here -->
+				<center>
+				 <ul class="nav-menu" style="margin-left:-60%;;list-style:none;">
+					<li style="margin-left:30%;" class="dropdown">
+						<a href="#" style="color:#fff !important;text-decoration:none;"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+							Clinic <span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu" style="width:100%;">
+								<li><a href="index.html"><span><center>Clinic</center></span></a></li>
+								<li><a href="histor.html"><span><center>Patient History</center></span></a></li>
+							</ul>
+					</li>
+				</ul>
+				</center>
+				<!--<div class="nav-menu" style="margin-left:-18%;">
+						<ul class="nav-menu">
+							<li class="dropdown" style="list-style:none;">
+								<a class="dropdown-toggle" style="color:#fff !important;" data-toggle="dropdown" href="#">
+									Registration Division
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" style="width:200%;">
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 1</a></li>
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				*-->
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div style="padding:15.5px;" id="page-content-wrapper">
+			<!-- Modal #add-medicine -->
+			<div class="modal fade" id="medicine" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:#000;">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Add Medicine</h4>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-mg-10">
+									<div class="col-md-4 col-lg-offset-1">
+										<label class="control-label">Medicine Type</label>
+									</div>
+									<div class="col-md-6 col-lg-offset-1">
+										<select class="form-control">
+												<option></option>
+												<option></option>
+												<option></option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<div class="col-md-8">
+									<br/></br>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-mg-10">
+									<div class="col-md-4 col-lg-offset-1">
+										<label class="control-label">Medicine Name</label>
+									</div>
+									<div class="col-md-6 col-lg-offset-1">
+										<select class="form-control">
+												<option></option>
+												<option></option>
+												<option></option>
+										</select>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-8">
+								<div class="col-md-8">
+									<br/></br>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-mg-10">
+									<div class="col-md-4 col-lg-offset-1">
+										<label class="control-label">Quantity(Stripe)</label>
+									</div>
+									<div class="col-md-6 col-lg-offset-1">
+										<input class="form-control" type="text" value=""/>
+									</div>
+								</div>
+							</div>
+							
+							<div class="col-md-8">
+								<div class="col-md-8">
+									<br/></br>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-mg-10">
+									<div class="col-md-4 col-lg-offset-1">
+										<label class="control-label">Description</label>
+									</div>
+									<div class="col-md-6 col-lg-offset-1">
+										<textarea class="form-control" style="resize:none;"></textarea>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-8">
+									<div class="col-md-8">
+										<br/><br/>
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="row">
+								<div class="col-md-8">
+									<div class="col-md-8">
+										<br/><br/>
+									</div>
+								</div>
+							</div>
+							
+							
+							<div class="row">
+								<div class="col-md-4">
+									<button id="buttoncancel" type="button" class="btn btn-info btn-block" data-dismiss="modal"  aria-label="Right Align">
+									Cancel
+									</button>
+								</div>
+								<div class="col-md-4 col-md-offset-4">
+									<button id="buttonsubmit" type="button" class="btn btn-info btn-block" data-dismiss="modal"  aria-label="Right Align">
+									Submit
+									</button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Modal #add-medicine -->
+			
+            <div style="padding:0px;" class="container-fluid">
+                <div style="padding:0px;" class="row">
+                    <!--<div class="col-lg-12">
+						<button id="menu-toggle" type="button" class="btn btn-navy-custom" aria-label="Left Align">
+						  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+						</button>
+                    </div>-->
+					<span style="margin-left:11%;" class="h1 col-lg-offset-1">PA001002</span>
+					<br/>
+					<div id="middle" class="col-md-8 col-lg-offset-1">
+						<div class="row">
+							<div class="col-xs-1 col-lg-offset-0">
+								<label class="control-label">Date</label>
+							</div>
+							<div class="col-md-2 col-lg-offset-5">
+								<input id="textkontak" type="text" class="datetimepicker5 form-control"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-1 col-lg-offset-0">
+								<label class="control-label">Diagnose</label>
+							</div>
+							<div class="col-md-2 col-lg-offset-3">
+								<textarea id="diagtext1" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-lg-offset-6">
+								<button id="buttonadd1" type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#medicine" aria-label="Right Align">
+									Add Medicine
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="middlelower" class="col-md-7 col-xs-1 col-lg-offset-0">
+						<br/>
+						<div class="row">
+							<table id="table1" class="table table-striped" data-pagination="true">
+								<thead id="headtable">
+									<th width="5%" class="text-center">Buy Here</th>
+									<th width="10%" class="text-center">Medicine Type</th>
+									<th width="10%" class="text-center">Medicine Name</th>
+									<th width="10%" class="text-center">Quantity(Strip)</th>
+									<th width="5%" class="text-center">Action</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center"><input type="checkbox"/></td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">test</td>
+										<td class="text-center">
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-edit"></a></span>
+											<span><a style="text-decoration:none;" href="#" class="glyphicon glyphicon-trash"></a></span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-lg-offset-9">
+								<button id="buttonadd2" type="button" class="btn btn-info btn-block" aria-label="Right Align">
+									Submit
+								</button>
+							</div>
+						</div>
+					</div>
+					
+					<div id="queue" class="col-md-4 col-lg-offset-8">
+					<!-- Active Queue-->
+						<div id="queue1" class="col-md-5 col-lg-offset-1">
+							<span id="header1" class="col-md-12">
+								<center>
+									<label id="headertext1" class="control-label h4">Active Queue</label>
+								</center>
+							</span>
+							<div class="container-fluid">
+							
+							</div>
+						</div>
+						<div class="col-md-1">
+						</div>
+						<!-- Temporary Queue-->
+						<div id="queue2" class="col-md-5 col-lg-offset-0">
+							<span id="header1" class="col-md-12">
+								<center>
+									<label id="headertext1" class="control-label h4">Temp Queue</label>
+								</center>
+							</span>
+							<div class="container-fluid">
+							
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+		<!-- Bar Queue-->
+		
+    </div>
+    <!-- /#wrapper -->
+	
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+	
+</body>
+
+</html>
