@@ -52,7 +52,7 @@
 		
 		$('.selectpicker').selectpicker();
 		
-		$('#table2clinic').bootstrapTable();
+		$('#table1').bootstrapTable();
 		$("#headline1").hide();
 
 	//	$('#table1').bootstrapTable();
@@ -100,7 +100,7 @@
 							Clinic <span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" style="width:100%;">
-								<li><a href="index.html"><span><center>Clinic</center></span></a></li>
+								<li><a href="Diagnose.html"><span><center>Diagnose Patient</center></span></a></li>
 								<li><a href="histor.html"><span><center>Patient History</center></span></a></li>
 							</ul>
 					</li>
@@ -261,27 +261,31 @@
 							Find Data
 						</button>
 					</div>
-					<div style="padding:0px;" class="col-md-10 col-md-offset-1">
-						<table id="table2clinic" class="table table-striped" data-pagination="true">
-							<thead id="headtable">
-								<th class="text-center" width="20%">No</th>
-								<th class="text-center" width="20%">Date</th>
-								<th class="text-center" width="20%">Diagnose</th>
-								<th class="text-center" width="20%">Action</th>
-							</thead>
-							<tr>
-								<td class="text-center">1</td>
-								<td class="text-center">12/05/2016</td>
-								<td class="text-center">penyakit kulit</td>
-								<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
-							</tr>
-							<tr>
-								<td class="text-center">2</td>
-								<td class="text-center">12/05/2016</td>
-								<td class="text-center">penyakit kulit</td>
-								<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
-							</tr>
-						</table>
+					<div class="row" style="margin-top:5%;">
+					
+						<div style="padding:0px;" class="col-md-10 col-md-offset-1">
+							<table id="table1" class="table table-striped" data-pagination="true">
+								<thead id="headtable">
+									<th class="text-center" width="20%">No</th>
+									<th class="text-center" width="20%">Date</th>
+									<th class="text-center" width="20%">Diagnose</th>
+									<th class="text-center" width="20%">Action</th>
+								</thead>
+								<tr>
+									<td class="text-center">1</td>
+									<td class="text-center">12/05/2016</td>
+									<td class="text-center">penyakit kulit</td>
+									<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
+								</tr>
+								<tr>
+									<td class="text-center">2</td>
+									<td class="text-center">12/05/2016</td>
+									<td class="text-center">penyakit kulit</td>
+									<td class="text-center"><a href="#" style="text-decoration:none"><span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#viewdata"></span></a></td>
+								</tr>
+							</table>
+						</div>
+					
 					</div>
 				</div>
 			</div>
