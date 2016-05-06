@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RS Cinta | Administration</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../Css/css/bootstrap.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-select.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-table.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../../Css/css/simple-sidebar.css" rel="stylesheet"/>
+	<link href="../../Css/css/style.css" rel="stylesheet"/>
+	<link href="../../Css/css/klinikcss.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- jQuery -->
+    <script src="../../Script/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../Script/bootstrap.min.js"></script>
+	<script src="../../Script/bootstrap-select.js"></script>
+	<script src="../../Script/moment.min.js"></script>
+    <script src="../../Script/moment-with-locales.js"></script>
+	<script src="../../Script/bootstrap-datetimepicker.js"></script>
+	<script src="../../Script/bootstrap-table.js"></script>
+	
+	<script type="text/javascript">
+	$(function(){
+		$('#datetimepicker5').datetimepicker({
+			format: 'L'
+		});
+		$('.datetimepicker5').datetimepicker({
+			format: 'L'
+		});
+		
+		$('.selectpicker').selectpicker();
+		
+		$('#Next').click(function(){
+			$('#new-patient').modal('hide');
+			$('#new-patient2').modal('show');
+		});
+		
+		$('#Back').click(function(){
+			$('#new-patient2').modal('hide');
+			$('#new-patient').modal('show');
+		});
+		
+		$('#table1').bootstrapTable();
+		$('#table2').bootstrapTable();
+		
+	});
+	</script>
+	
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-top:15%;">
+				
+				<!-- Put Profile Image Here -->
+				<img src="#" onerror="this.src='../../Images/none.png'" width="150" height="150" style="border-radius:100%;margin-left:20%;"/>
+			
+                <div class="col-lg-12 col-md-12" style="margin-top:5%" align="center">
+                    <span href="#" class="h4" style="color:#fff !important;align:center;">
+                        Lab Assistant Staff 01
+                    </span>
+                </div>
+				
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-change-password" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;margin-top:15%;">
+					  Change Password
+					</button>
+                </div>
+				<br/>
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-logout" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;">
+					  Log Out
+					</button>
+                </div>
+				<hr style="margin-top:80%;margin-left:-88%;color:black;" width="80%">
+                
+				<!-- Staff Menu here -->
+				<center>
+				 <ul class="nav-menu" style="margin-left:-60%;;list-style:none;">
+					<li style="margin-left:30%;" class="dropdown">
+						<a href="Lab.html" style="color:#fff !important;text-decoration:none;"> Laboratorium </a>
+					</li>
+				</ul>
+				</center>
+				<!--<div class="nav-menu" style="margin-left:-18%;">
+						<ul class="nav-menu">
+							<li class="dropdown" style="list-style:none;">
+								<a class="dropdown-toggle" style="color:#fff !important;" data-toggle="dropdown" href="#">
+									Registration Division
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" style="width:200%;">
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 1</a></li>
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				*-->
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div style="padding:15.5px;" id="page-content-wrapper">
+		
+			<!-- Modal #decline-patient -->
+			<div class="modal fade" id="decline-patient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:#000;">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header" style="background-color:#d62c1a!important;">
+							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Decline Patient Queue</h4>
+						</div>
+						<div class="modal-body">
+							<form id="AddForm" action="#" method="post">
+								<div class="container-fluid">
+									
+								<div class="col-md-12 col-lg-12">
+									<center><span>Are You Sure?</span></center>
+								</div>	
+									
+									<div class="row" style="margin-top:10%;">
+										<div class="radio">
+										
+										<div class="col-lg-3 col-md-3">
+											<button id="Cancel" type="button" class="btn btn-danger btn-block" aria-label="Left Align" data-toggle="modal" data-target="#decline-patient">
+											  No
+											</button>
+										</div>
+										
+										<div class="col-lg-3 col-lg-offset-6 col-md-3 col-md-offset-6">
+											<button id="Next" type="button" class="btn btn-info btn-block" aria-label="Right Align">
+											  Yes
+											</button>
+										</div>
+										
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Modal #decline-patient -->
+			
+            <div style="padding:0px;" class="container-fluid">
+                <div style="padding:0px;" class="row">
+                    <!--<div class="col-lg-12">
+						<button id="menu-toggle" type="button" class="btn btn-navy-custom" aria-label="Left Align">
+						  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+						</button>
+                    </div>-->
+					
+					<br/>
+					<div class="col-lg-8 col-lg-offset-1">
+					
+						<div class="row">
+							<span class="h3">PA001001 - 9 April 2016</span>
+						</div>
+					
+						<br/>
+						<div class="row" style="margin-top:5%;">
+							<table id="table1" class="table table-striped">
+								<thead id="headtable">
+									<th width="5%" class="text-center">No.</th>
+									<th width="10%" class="text-center">Description</th>
+									<th width="10%" class="text-center">Price</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center">1</td>
+										<td class="text-center">Registration Fee</td>
+										<td class="text-center">Rp 50000</td>
+									</tr>
+									<tr>
+										<td class="text-center">2</td>
+										<td class="text-center">Consultation Fee (General)</td>
+										<td class="text-center">Rp 75000</td>
+									</tr>
+									<tr>
+										<td class="text-center">3</td>
+										<td class="text-center">Medicine Fee</td>
+										<td class="text-center">Rp 25000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="row" style="margin-top:10%;">
+							<table id="table2" class="table table-striped" data-pagination="true">
+								<thead id="headtable">
+									<th class="text-center col-lg-1">Buy Here</th>
+									<th class="text-center col-lg-3">Medicine Type</th>
+									<th class="text-center col-lg-3">Medicine Name</th>
+									<th class="text-center col-lg-2">Quantity(Strip)</th>
+									<th class="text-center col-lg-3">Price</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="text-center col-lg-1"><input type="checkbox" class="form-control" id="buyMedicine1" name="buyMedicine1"/></td>
+										<td class="text-center col-lg-3">Paracetamol</td>
+										<td class="text-center col-lg-3">Sanmol</td>
+										<td class="text-center col-lg-2"><input type="text" class="form-control text-center" id="quantityMedicine1" name="quantityMedicine1"/></td>
+										<td class="text-center col-lg-3">Rp 12000</td>
+									</tr>
+									<tr>
+										<td class="text-center col-lg-1"><input type="checkbox" class="form-control" id="buyMedicine2" name="buyMedicine2"/></td>
+										<td class="text-center col-lg-3">Antibiotic</td>
+										<td class="text-center col-lg-3">Amoxicilin</td>
+										<td class="text-center col-lg-2"><input type="text" class="form-control text-center" id="quantityMedicine2" name="quantityMedicine2"/></td>
+										<td class="text-center col-lg-3">Rp 13000</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="row" style="margin-top:5%;">
+							<div class="col-md-5 col-lg-offset-8">
+								<span class="h3">Total : Rp 150000</span>
+							</div>
+						</div>
+						
+						<div class="row" style="margin-top:10%;">
+							<div class="col-md-3">
+								<button id="printButton" type="button" class="btn btn-info btn-block glyphicon glyphicon-print" aria-label="Left Align">
+								</button>
+							</div>
+							
+							<div class="col-md-3 col-lg-offset-6">
+								<button id="payButton" type="button" class="btn btn-info btn-block glyphicon glyphicon-shopping-cart" aria-label="Right Align">
+								</button>
+							</div>
+						</div>
+					</div>
+					
+					<div id="queueaja" class="col-lg-12">
+					<!-- Active Queue-->
+						<div id="queue-active" class="col-lg-12">
+							<span id="header1" class="col-lg-12">
+								<center>
+									<label id="headertext1" class="control-label h4">Active Queue</label>
+								</center>
+							</span>
+							<div class="container-fluid">
+								
+								<table id="table3" class="table table-default">
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h3" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkout
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
+														Decline
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h3" style="color:#fff;">PA001003</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkout
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
+														Decline
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h3" style="color:#fff;">PA001004</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkout
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
+														Decline
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+								</table>
+								
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+		<!-- Bar Queue-->
+		
+    </div>
+    <!-- /#wrapper -->
+	
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+	
+</body>
+
+</html>
