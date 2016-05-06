@@ -109,3 +109,24 @@ background-color:#33396b;
 	background-color:#d62c1a;
 }
 
+#queue-active{
+background-color:#948cbe;
+padding:0px;
+height:686px;
+}
+
+#queueaja{
+background-color:#ffffff;
+height:686px;
+width:15%;
+margin-top:-2.8%;
+margin-left:65%;
+padding:0px;
+float:right;
+position:fixed;
+}
+
+#textArea{
+resize:none;
+}
+

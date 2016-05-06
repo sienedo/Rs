@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RS Cinta | Finance</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../Css/css/bootstrap.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-select.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+	<link href="../../Css/css/bootstrap-table.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../../Css/css/simple-sidebar.css" rel="stylesheet"/>
+	<link href="../../Css/css/style.css" rel="stylesheet"/>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<!-- jQuery -->
+    <script src="../../Script/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../Script/bootstrap.min.js"></script>
+	<script src="../../Script/bootstrap-select.js"></script>
+	<script src="../../Script/moment.min.js"></script>
+    <script src="../../Script/moment-with-locales.js"></script>
+	<script src="../../Script/bootstrap-datetimepicker.js"></script>
+	<script src="../../Script/bootstrap-table.js"></script>
+	
+	<script type="text/javascript">
+	$(function(){
+		$('#datetimepicker5').datetimepicker({
+			format: 'L'
+		});
+		
+		$('.selectpicker').selectpicker();
+		
+		$('#Next').click(function(){
+			$('#new-patient').modal('hide');
+			$('#new-patient2').modal('show');
+		});
+		
+		$('#Back').click(function(){
+			$('#new-patient2').modal('hide');
+			$('#new-patient').modal('show');
+		});
+		
+	});
+	</script>
+	
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-top:15%;">
+				
+				<!-- Put Profile Image Here -->
+				<img src="../../Images/test2.jpg" width="150" height="150" style="border-radius:100%;margin-left:20%;"/>
+			
+                <div class="col-lg-12 col-md-12" style="margin-top:5%" align="center">
+                    <span href="#" class="h4" style="color:#fff !important;align:center;">
+                        Finance Staff 01
+                    </span>
+                </div>
+				
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-change-password" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;margin-top:15%;">
+					  Change Password
+					</button>
+                </div>
+				<br/>
+                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2">
+                    <button id="menu-logout" type="button" class="btn btn-info btn-block" aria-label="Center Align" style="margin-bottom:15%;margin-left:-10%;">
+					  Log Out
+					</button>
+                </div>
+				<hr style="margin-top:80%;margin-left:-88%;color:black;" width="80%">
+                
+				<!-- Staff Menu here -->
+				<center>
+				 <ul class="nav-menu" style="margin-left:-60%;;list-style:none;">
+					<li style="margin-left:30%;" class="dropdown">
+						<a href="Administration.html" style="color:#fff !important;text-decoration:none;"> Administration </a>
+					</li>
+				</ul>
+				</center>
+				<!--<div class="nav-menu" style="margin-left:-18%;">
+						<ul class="nav-menu">
+							<li class="dropdown" style="list-style:none;">
+								<a class="dropdown-toggle" style="color:#fff !important;" data-toggle="dropdown" href="#">
+									Registration Division
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" style="width:200%;">
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 1</a></li>
+									<li align="center" style="margin-left:-50%;"><a href="#">Sub Menu 2</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				*-->
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+			
+            <div class="container-fluid">
+                <div class="row">
+                    <!--<div class="col-lg-12">
+                        
+						<button id="menu-toggle" type="button" class="btn btn-navy-custom" aria-label="Left Align">
+						  <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
+						</button>
+                        
+                    </div>-->
+					
+						<div class="col-lg-12 col-md-12" style="margin-top:-1%;">
+							
+							<div id="notification-bar" tab-index="1" class="well well-sm">
+							  <center><span>You are currently logged in as Administration 01.</span></center>
+							</div>
+							
+						</div>
+					
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+	
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+	
+</body>
+
+</html>
