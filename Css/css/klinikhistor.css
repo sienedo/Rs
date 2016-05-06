@@ -11,3 +11,14 @@ background-color:#948cbe;
 #token{
 margin-left:9%;
 }
+
+#buttoncancel{
+background-color:#df0024;
+color:#fff;
+border-color:#e2342d;
+}
+#buttonsubmit{
+background-color:#2eb4c0;
+color:#fff;
+border-color:#3fb8c1;
+}
