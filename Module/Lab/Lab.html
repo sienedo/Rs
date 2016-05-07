@@ -41,10 +41,10 @@
 	
 	<script type="text/javascript">
 	$(function(){
-		$('#datetimepicker5').datetimepicker({
+		$('.datetimepicker1').datetimepicker({
 			format: 'L'
 		});
-		$('.datetimepicker5').datetimepicker({
+		$('.datetimepicker6').datetimepicker({
 			format: 'L'
 		});
 		
@@ -134,7 +134,7 @@
 					<div class="modal-content">
 						<div class="modal-header" style="background-color:#d62c1a!important;">
 							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title" id="myModalLabel">Decline Patient Queue</h4>
+							<h4 class="modal-title" id="myModalLabel">Cancel Patient Queue</h4>
 						</div>
 						<div class="modal-body">
 							<form id="AddForm" action="#" method="post">
@@ -169,6 +169,88 @@
 			</div>
 			<!-- /Modal #decline-patient -->
 			
+			<!-- Modal #delay-patient -->
+			<div class="modal fade" id="delay-patient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:#000;">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Delay Patient Queue</h4>
+						</div>
+						<div class="modal-body">
+							<form id="AddForm" action="#" method="post">
+								<div class="container-fluid">
+									
+								<div class="col-md-12 col-lg-12">
+									<center><span>Are You Sure?</span></center>
+								</div>	
+									
+									<div class="row" style="margin-top:10%;">
+										<div class="radio">
+										
+										<div class="col-lg-3 col-md-3">
+											<button id="Cancel" type="button" class="btn btn-danger btn-block" aria-label="Left Align" data-dismiss="modal">
+											  No
+											</button>
+										</div>
+										
+										<div class="col-lg-3 col-lg-offset-6 col-md-3 col-md-offset-6">
+											<button id="Next" type="button" class="btn btn-info btn-block" aria-label="Right Align" data-dismiss="modal">
+											  Yes
+											</button>
+										</div>
+										
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Modal #delay-patient -->
+			
+			<!-- Modal #makeActive-patient -->
+			<div class="modal fade" id="makeActive-patient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color:#000;">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="closeWhite" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Make Active Patient Queue</h4>
+						</div>
+						<div class="modal-body">
+							<form id="AddForm" action="#" method="post">
+								<div class="container-fluid">
+									
+								<div class="col-md-12 col-lg-12">
+									<center><span>Are You Sure?</span></center>
+								</div>	
+									
+									<div class="row" style="margin-top:10%;">
+										<div class="radio">
+										
+										<div class="col-lg-3 col-md-3">
+											<button id="Cancel" type="button" class="btn btn-danger btn-block" aria-label="Left Align" data-dismiss="modal">
+											  No
+											</button>
+										</div>
+										
+										<div class="col-lg-3 col-lg-offset-6 col-md-3 col-md-offset-6">
+											<button id="Next" type="button" class="btn btn-info btn-block" aria-label="Right Align" data-dismiss="modal">
+											  Yes
+											</button>
+										</div>
+										
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Modal #makeActive-patient -->
+			
             <div style="padding:0px;" class="container-fluid">
                 <div style="padding:0px;" class="row">
                     <!--<div class="col-lg-12">
@@ -178,90 +260,343 @@
                     </div>-->
 					
 					<br/>
-					<div class="col-lg-8 col-lg-offset-1">
+					
+					<!-- main content -->
+					<div class="col-lg-6">
 					
 						<div class="row">
-							<span class="h3">PA001001 - 9 April 2016</span>
-						</div>
-					
-						<br/>
-						<div class="row" style="margin-top:5%;">
-							<table id="table1" class="table table-striped">
-								<thead id="headtable">
-									<th width="5%" class="text-center">No.</th>
-									<th width="10%" class="text-center">Description</th>
-									<th width="10%" class="text-center">Price</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="text-center">1</td>
-										<td class="text-center">Registration Fee</td>
-										<td class="text-center">Rp 50000</td>
-									</tr>
-									<tr>
-										<td class="text-center">2</td>
-										<td class="text-center">Consultation Fee (General)</td>
-										<td class="text-center">Rp 75000</td>
-									</tr>
-									<tr>
-										<td class="text-center">3</td>
-										<td class="text-center">Medicine Fee</td>
-										<td class="text-center">Rp 25000</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						
-						<div class="row" style="margin-top:10%;">
-							<table id="table2" class="table table-striped" data-pagination="true">
-								<thead id="headtable">
-									<th class="text-center col-lg-1">Buy Here</th>
-									<th class="text-center col-lg-3">Medicine Type</th>
-									<th class="text-center col-lg-3">Medicine Name</th>
-									<th class="text-center col-lg-2">Quantity(Strip)</th>
-									<th class="text-center col-lg-3">Price</th>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="text-center col-lg-1"><input type="checkbox" class="form-control" id="buyMedicine1" name="buyMedicine1"/></td>
-										<td class="text-center col-lg-3">Paracetamol</td>
-										<td class="text-center col-lg-3">Sanmol</td>
-										<td class="text-center col-lg-2"><input type="text" class="form-control text-center" id="quantityMedicine1" name="quantityMedicine1"/></td>
-										<td class="text-center col-lg-3">Rp 12000</td>
-									</tr>
-									<tr>
-										<td class="text-center col-lg-1"><input type="checkbox" class="form-control" id="buyMedicine2" name="buyMedicine2"/></td>
-										<td class="text-center col-lg-3">Antibiotic</td>
-										<td class="text-center col-lg-3">Amoxicilin</td>
-										<td class="text-center col-lg-2"><input type="text" class="form-control text-center" id="quantityMedicine2" name="quantityMedicine2"/></td>
-										<td class="text-center col-lg-3">Rp 13000</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						
-						<div class="row" style="margin-top:5%;">
-							<div class="col-md-5 col-lg-offset-8">
-								<span class="h3">Total : Rp 150000</span>
-							</div>
-						</div>
-						
-						<div class="row" style="margin-top:10%;">
-							<div class="col-md-3">
-								<button id="printButton" type="button" class="btn btn-info btn-block glyphicon glyphicon-print" aria-label="Left Align">
-								</button>
+							
+							<div class="col-lg-3 col-lg-offset-1">
+								<span class="h3">PA001001</span>
 							</div>
 							
-							<div class="col-md-3 col-lg-offset-6">
-								<button id="payButton" type="button" class="btn btn-info btn-block glyphicon glyphicon-shopping-cart" aria-label="Right Align">
-								</button>
-							</div>
 						</div>
-					</div>
 					
-					<div id="queueaja" class="col-lg-12">
+						<div class="row" style="margin-top:5%;">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="Date" class="control-label">Date</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="Date" type="text" class="datetimepicker1 form-control" name="Date" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="HemoText" class="control-label">Hemoglobin</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="HemoText" type="text" class="form-control" name="HemoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="HemoText" class="control-label">Leukosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="LeukoText" type="text" class="form-control" name="LeukoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="EriText" class="control-label">Eritrosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="EriText" type="text" class="form-control" name="EriText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="LEDText" class="control-label">LED</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="LEDText" type="text" class="form-control" name="LEDText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="TromboText" class="control-label">Trombosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="TromboText" type="text" class="form-control" name="TromboText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="HematoText" class="control-label">Hematokrit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="HematoText" type="text" class="form-control" name="HematoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="RetikuloText" class="control-label">Retikulosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="RetikuloText" type="text" class="form-control" name="RetikuloText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="BasoText" class="control-label">Basofil</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="BasoText" type="text" class="form-control" name="BasoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="EosinoText" class="control-label">Eosinofil</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="EosinoText" type="text" class="form-control" name="EosinoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="BatangText" class="control-label">Batang</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="BatangText" type="text" class="form-control" name="BatangText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="SegmentText" class="control-label">Segment</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="SegmentText" type="text" class="form-control" name="SegmentText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="LimfoText" class="control-label">Limfosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="LimfoText" type="text" class="form-control" name="LimfoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="MonoText" class="control-label">Monosit</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<input id="MonoText" type="text" class="form-control" name="MonoText" style="height:40px;margin-top:-2.5%;"/>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row">
+							
+							<div class="radio">
+							
+								<div class="col-lg-3 col-lg-offset-1">
+								
+									<label for="GolDar" class="control-label">Golongan Darah</label>
+								
+								</div>
+								
+								<div class="col-lg-6 col-lg-offset-2">
+								
+									<select class="form-control selectpicker customSelectRS" id="GolDar" name="GolDar" data-live-search="true">
+											<option value="" selected>Select Blood Type</option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+											<option value="AB">AB</option>
+											<option value="O">O</option>
+									</select>
+								
+								</div>
+							
+							</div>
+							
+						</div>
+						
+						<div class="row" style="margin-top:10%;">
+							
+								<div class="col-lg-4 col-lg-offset-8">
+								
+									<button id="buttonSubmit" type="button" class="btn btn-info btn-block" aria-label="Right Align">
+										Submit
+									</button>
+								
+								</div>
+							
+						</div>
+						
+					</div>
+					<!-- /main content -->
+					
+					<div id="queuelab" class="col-lg-12">
+					
 					<!-- Active Queue-->
-						<div id="queue-active" class="col-lg-12">
+						<div id="queue-active" style="overflow-y:scroll;" class="col-lg-4">
 							<span id="header1" class="col-lg-12">
 								<center>
 									<label id="headertext1" class="control-label h4">Active Queue</label>
@@ -273,41 +608,19 @@
 									<tr>
 										<td class="text-center">
 											<tr>
-												<td class="text-center"><span class="h3" style="color:#fff;">PA001002</span></td>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
 											</tr>
 											<tr>
 												<td class="text-center">
-													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
-														Checkout
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
 													</button>
 												</td>
 											</tr>
 											<tr>
 												<td class="text-center">
-													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
-														Decline
-													</button>
-												</td>
-											</tr>
-										</td>
-									</tr>
-									
-									<tr>
-										<td class="text-center">
-											<tr>
-												<td class="text-center"><span class="h3" style="color:#fff;">PA001003</span></td>
-											</tr>
-											<tr>
-												<td class="text-center">
-													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
-														Checkout
-													</button>
-												</td>
-											</tr>
-											<tr>
-												<td class="text-center">
-													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
-														Decline
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
 													</button>
 												</td>
 											</tr>
@@ -317,19 +630,104 @@
 									<tr>
 										<td class="text-center">
 											<tr>
-												<td class="text-center"><span class="h3" style="color:#fff;">PA001004</span></td>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
 											</tr>
 											<tr>
 												<td class="text-center">
-													<button id="CheckoutButton" type="button" class="btn btn-info btn-block" aria-label="Center Align">
-														Checkout
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
 													</button>
 												</td>
 											</tr>
 											<tr>
 												<td class="text-center">
-													<button id="DeclineButton" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
-														Decline
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="CheckoutButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Checkup
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DelayButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#delay-patient">
+														Delay
 													</button>
 												</td>
 											</tr>
@@ -339,6 +737,79 @@
 								
 							</div>
 						</div>
+						<!-- /Active Queue-->
+						
+						<!-- #queue-temp -->
+						<div id="queue-temp" style="overflow-y:scroll;" class="col-lg-4">
+							<span id="header1" class="col-lg-12">
+								<center>
+									<label id="headertext1" class="control-label h4">Temp Queue</label>
+								</center>
+							</span>
+							<div class="container-fluid">
+								
+								<table id="table4" class="table table-default">
+								
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="ActiveButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align" data-toggle="modal" data-target="#makeActive-patient">
+														Make Active
+													</button>
+												</td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="DeclineButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-danger btn-block" aria-label="Center Align" data-toggle="modal" data-target="#decline-patient">
+														Cancel
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									
+								</table>
+								
+							</div>
+						</div>
+					<!-- /#queue-temp -->
+					
+					<!-- #queue-claim -->
+						<div id="queue-claim" style="overflow-y:scroll;" class="col-lg-4">
+							<span id="header1" class="col-lg-12">
+								<center>
+									<label id="headertext1" class="control-label h4">Claim Queue</label>
+								</center>
+							</span>
+							<div class="container-fluid">
+								
+								<table id="table5" class="table table-default">
+								
+									<tr>
+										<td class="text-center">
+											<tr>
+												<td class="text-center"><span class="h4" style="color:#fff;">PA001002</span></td>
+											</tr>
+											<tr>
+												<td class="text-center">
+													<button id="ActiveButton" style="font-size:15px;padding:0px;" type="button" class="btn btn-info btn-block" aria-label="Center Align">
+														Claim
+													</button>
+												</td>
+											</tr>
+										</td>
+									</tr>
+									
+								</table>
+								
+							</div>
+						</div>
+					<!-- /#queue-claim -->
+						
 					</div>
                 </div>
             </div>
