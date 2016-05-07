@@ -109,6 +109,14 @@ background-color:#33396b;
 	background-color:#d62c1a;
 }
 
+.medicine-out-of-stock-pharmacy{
+	color:#d62c1a;
+}
+
+.medicine-alternative-pharmacy{
+	color:#4abf74;
+}	
+
 #queue-active{
 background-color:#948cbe;
 padding:0px;
