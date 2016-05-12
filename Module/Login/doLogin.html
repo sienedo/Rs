@@ -1,0 +1,60 @@
+<html>
+	<head>
+		
+		<!-- jQuery -->
+		<script src="../../Script/jquery.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+			
+				var getUrlParameter = function getUrlParameter(sParam) {
+					var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+						sURLVariables = sPageURL.split('&'),
+						sParameterName,
+						i;
+
+					for (i = 0; i < sURLVariables.length; i++) {
+						sParameterName = sURLVariables[i].split('=');
+
+						if (sParameterName[0] === sParam) {
+							return sParameterName[1] === undefined ? true : sParameterName[1];
+						}
+					}
+				};
+				
+				var username = getUrlParameter('user');
+				var pass = getUrlParameter('pwd');
+				
+				if(username=="REG001" && pass=="0"){
+					window.location.href = "../Registration/index.html";
+				}
+				
+				else if(username=="DOC001" && pass=="0"){
+					window.location.href = "../Clinic/index.html";
+				}
+				
+				else if(username=="LAB001" && pass=="0"){
+					window.location.href = "../Lab/index.html";
+				}
+				
+				else if(username=="ADM001" && pass=="0"){
+					window.location.href = "../Administration/index.html";
+				}
+				
+				else if(username=="PHA001" && pass=="0"){
+					window.location.href = "../Pharmacy/index.html";
+				}
+				
+				else if(username=="FIN001" && pass=="0"){
+					window.location.href = "../Finance/index.html";
+				}
+				
+				else{
+					alert("Bad Username or Password.");
+					window.location.href = "index.html";
+				}
+			
+			});
+		</script>
+	</head>
+</html>

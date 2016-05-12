@@ -31,13 +31,15 @@
 	<script src="../../Script/bootstrap-table.js"></script>
 
 	<script type="text/javascript">
-	$(function(){
+	$(document).ready(function(){
 
-		function login() {
-			testID = $('#inputUserID').value();
-			testPWD = $('#inputPwd').value(); 
-			alert(testID + " " + testPwd);
-		}
+		$('#buttonsubmit').click(function() {
+			var user = $('#inputUserID').val();
+			var pwd= $('#inputPwd').val();
+			
+			var stringURL = "doLogin.html?user=" + user + "&pwd=" + pwd;
+			window.location.href = stringURL;
+		});
 		
 	});
 	</script>
@@ -76,7 +78,7 @@
 						<div class="row" style="margin-top:2%;">
 						
 							<div class="col-lg-6 col-lg-offset-3">
-								<input id="inputUserID" type="text" value="" class="form-control text-center"/>
+								<input id="inputUserID" name="userID" type="text" value="" class="form-control text-center"/>
 							</div>
 							
 						</div>
@@ -90,7 +92,7 @@
 						<div class="row" style="margin-top:2%;">
 						
 							<div class="col-lg-6 col-lg-offset-3">
-								<input id="inputPwd" type="text" value="" class="form-control text-center"/>
+								<input id="inputPwd" name="pwd" type="password" value="" class="form-control text-center"/>
 							</div>
 							
 						</div>
@@ -99,7 +101,7 @@
 						
 							<div id="tombol" class="col-lg-6 col-lg-offset-3">
 							
-								<button id="buttonsubmit" type="button" class="btn btn-info btn-block buttonsubmit" onclick="login();" aria-label="Right Align">
+								<button id="buttonsubmit" type="button" class="btn btn-info btn-block buttonsubmit" aria-label="Right Align">
 									<span id="label1" class="h4">Log In</span>
 								</button>
 								
